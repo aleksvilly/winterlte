@@ -12,9 +12,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>WinterLte | Starter</title>
 
   <link rel="stylesheet" href="/css/app.css">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" id="app">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -167,21 +168,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link to="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-chart-line"></i>
               <p>
                 Dashboard
               </p>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link active">
+            <router-link to="#" class="nav-link active">
               <i class="nav-icon fas fa-user-cog"></i>
               <p>
                 User Settings
                 <i class="right fas fa-angle-left"></i>
               </p>
-            </a>
+            </router-link>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="#" class="nav-link active">
@@ -199,12 +200,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link to="/profile" class="nav-link">
               <i class="nav-icon fas fa-user-circle"></i>
               <p>
                 Profile
               </p>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -271,7 +272,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a>
               </div>
-            </div><!-- /.card -->
+          </div><!-- /.card -->
+          <router-view></router-view>
           </div>
           <!-- /.col-md-6 -->
           <div class="col-lg-6">
