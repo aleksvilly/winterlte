@@ -1,15 +1,9 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Profile</div>
+    <div class="card">
+        <div class="card-header bg-success">Example Profile</div>
 
-                    <div class="card-body">
-                        I'm an example Profile.
-                    </div>
-                </div>
-            </div>
+        <div class="card-body">
+            I'm an example Profile.
         </div>
     </div>
 </template>

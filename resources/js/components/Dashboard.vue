@@ -1,15 +1,9 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Dashboard</div>
+    <div class="card">
+        <div class="card-header bg-purple">Example Dashboard</div>
 
-                    <div class="card-body">
-                        I'm an example Dashboard.
-                    </div>
-                </div>
-            </div>
+        <div class="card-body">
+            I'm an example Dashboard.
         </div>
     </div>
 </template>
