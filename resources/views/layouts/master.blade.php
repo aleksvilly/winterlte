@@ -10,7 +10,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>WinterLte | Starter</title>
-
   <link rel="stylesheet" href="/css/app.css">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
@@ -176,16 +175,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </router-link>
           </li>
           <li class="nav-item has-treeview">
-            <router-link to="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user-cog"></i>
               <p>
                 User Settings
                 <i class="right fas fa-angle-left"></i>
               </p>
-            </router-link>
+            </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="#" class="nav-link">
                   {{-- <i class="far fa-circle nav-icon"></i> --}}
                   <i class="fas fa-circle-notch nav-icon"></i>
                   <p>Active Page</p>
