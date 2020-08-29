@@ -123,8 +123,13 @@
         loadUsers() {
           axios.get("api/user").then(({ data }) => (this.users = data.data));
         },
-        createUsers() {
+        createUser() {
           this.form.post('api/user');
+          $('#addNew').modal('hide')
+          Toast.fire({
+            icon: 'success',
+            title: 'User added successfully'
+          })
         }
       },
       created() {
