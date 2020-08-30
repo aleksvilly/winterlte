@@ -66,6 +66,8 @@ Vue.filter('myDate', function (created) {
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').defaul);
 
+window.Fire = new Vue();
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
