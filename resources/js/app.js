@@ -10,7 +10,6 @@ window.Vue = require('vue');
 import { Form, HasError, AlertError } from 'vform'
 import moment from 'moment';
 
-// import Swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 import Swal from 'sweetalert2'
 window.Swal = Swal;
 

@@ -2151,7 +2151,12 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
+    var _this2 = this;
+
     this.loadUsers();
+    setInterval(function () {
+      return _this2.loadUsers();
+    }, 3000);
   }
 });
 
@@ -78918,7 +78923,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
- // import Swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 
 
 window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a;
