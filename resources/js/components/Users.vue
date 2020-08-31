@@ -132,20 +132,23 @@
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
-            this.form.delete('api/user/'+id).then(() => {
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
-            }).catch(() => {
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                footer: '<a href>Why do I have this issue?</a>'
-              })
-            });
+            if(result.value) {
+              this.form.delete('api/user/'+id).then(() => {
+                Swal.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+                )
+                Fire.$emit('AfterCreate');
+              }).catch(() => {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Something went wrong!',
+                  footer: '<a href>Why do I have this issue?</a>'
+                })
+              });
+            }
           })
         },
         loadUsers() {
