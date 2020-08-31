@@ -31,7 +31,9 @@
                       <td>{{user.created_at | myDate}}</td>
                       <td>
                           <a href="#"><i class="fas fa-edit green"></i></a>
-                          <a href="#"><i class="fas fa-trash-alt red"></i></a>
+                          <a href="#" @click="deleteUser(user.id)">
+                            <i class="fas fa-trash-alt red"></i>
+                          </a>
                       </td>
                     </tr>
                   </tbody>
@@ -120,6 +122,26 @@
         }
       },
       methods: {
+        deleteUser(id) {
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            this.form.delete('api/user/'+id);
+            if (result.value) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
+        },
         loadUsers() {
           axios.get("api/user").then(({ data }) => (this.users = data.data));
         },
