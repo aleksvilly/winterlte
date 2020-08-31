@@ -2147,11 +2147,16 @@ __webpack_require__.r(__webpack_exports__);
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
       }).then(function (result) {
-        _this.form["delete"]('api/user/' + id);
-
-        if (result.value) {
+        _this.form["delete"]('api/user/' + id).then(function () {
           Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
-        }
+        })["catch"](function () {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href>Why do I have this issue?</a>'
+          });
+        });
       });
     },
     loadUsers: function loadUsers() {
