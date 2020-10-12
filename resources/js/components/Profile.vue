@@ -100,7 +100,7 @@
                     
                         <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button @click.prevent="updateInfo" type="submit" class="btn btn-primary">Update</button>
                         </div>
                         </div>
                     </form>
@@ -138,6 +138,15 @@
         },
         
         methods: {
+            updateInfo() {
+                this.form.put('api/profile/')
+                .then(() => {
+
+                })
+                .catch(() => {
+                    
+                });
+            },
             updateProfile(e) {
                 let file = e.target.files[0];
                 let reader = new FileReader();
