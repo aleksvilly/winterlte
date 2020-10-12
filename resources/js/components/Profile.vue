@@ -87,7 +87,7 @@
                         <div class="form-group row">
                             <label for="exampleFormControlFile1" class="col-sm-2 col-form-label">Photo</label>
                             <div class="col-sm-10">
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" @change="updateProfile" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                         </div>
 
@@ -135,6 +135,17 @@
         },
         mounted() {
             console.log('Component mounted.')
+        },
+        
+        methods: {
+            updateProfile(e) {
+                let file = e.target.files[0];
+                let reader = new FileReader();
+                reader.onloadend = (file) => {
+                    this.form.photo = reader.result;
+                }
+                reader.readAsDataURL(file);
+            }
         },
         created() {
             axios.get("api/profile").then(({ data }) => (this.form.fill(data)));
