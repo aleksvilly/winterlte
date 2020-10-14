@@ -150,10 +150,20 @@
             updateProfile(e) {
                 let file = e.target.files[0];
                 let reader = new FileReader();
-                reader.onloadend = (file) => {
-                    this.form.photo = reader.result;
+
+                if(file['size'] < 2111775) {
+                    reader.onloadend = (file) => {
+                        this.form.photo = reader.result;
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'File size must be less than 2MB!',
+                        footer: '<a href>Why do I have this issue?</a>'
+                    })
                 }
-                reader.readAsDataURL(file);
             }
         },
         created() {
