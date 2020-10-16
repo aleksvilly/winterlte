@@ -94,7 +94,7 @@
                         <div class="form-group row">
                         <label for="inputSkills" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputSkills" placeholder="Password">
+                            <input type="password" v-model="form.password" class="form-control" id="inputSkills" placeholder="Password">
                         </div>
                         </div>
                     
